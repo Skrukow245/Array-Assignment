@@ -9,8 +9,14 @@ class Program
         string[] colors = { "Red", "Blue", "Yellow", "Green" };   //array of colors
         Console.WriteLine("Please choose 0-3 for your color");   //asking for user input
         int num = int.Parse(Console.ReadLine());      //reading user input
-        Console.WriteLine("color is: " + colors[num]);   //returning user input as array answer
-
+        if (num > 3 || num < 0)
+        {
+            Console.WriteLine("Index does not exist");     //will return error if num isn't on index
+        }
+        else
+        {
+            Console.WriteLine("color is: " + colors[num]);   //returning user input as array answer
+        }
 
         int[] numArray = { 1, 3, 5, 7, 9 };
         Console.WriteLine("Please choose 0-4 for your number");
@@ -28,8 +34,3 @@ class Program
     }
 }
 
-
-//if (!int.TryParse(input, out numArray))                             //do not quite get how to add this in to make it give an error
-//{                                                                   //message for a non existant index
-//    Console.WriteLine("Index does not exist");
-//}
